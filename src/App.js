@@ -1,13 +1,12 @@
-
-import Videos from "./Components/Videos";
-import About from './Components/About';
+import Home from "./Components/Home";
+import About from "./Components/About";
 import "./App.css";
 
 function App() {
 	return (
 		<div className="App">
-			<Videos />
-     <About />
+			<Home />
+			<About />
 		</div>
 	);
 }
