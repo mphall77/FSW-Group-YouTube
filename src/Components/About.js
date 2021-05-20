@@ -42,14 +42,13 @@ const About = () => {
           <ul className="teammates" id="TeamDescriptions">
             {teammates.map((teammate) => {
               return (
-                <>
-                  <li>
-                    <a href={teammate.gitHub} target="_blank">
+
+                  <li key={teammate.name}>
+                    <a href={teammate.gitHub} target="_blank"rel="noreferrer">            
                       <h3>{teammate.name}</h3>
                     </a>
                     <p>{teammate.bio}</p>
                   </li>
-                </>
               );
             })}
           </ul>
