@@ -1,46 +1,59 @@
 import "./About.css";
-const descriptions = {
-  Projct:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  Kenia:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue neque gravida in fermentum et sollicitudin ac orci. Quis vel eros donec ac odio tempor orci. Sem nulla pharetra diam sit. Curabitur vitae nunc sed velit dignissim.",
-  Marsha:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi quis eleifend quam adipiscing vitae proin sagittis nisl. Eget aliquet nibh praesent tristique magna sit. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Leo vel fringilla est ullamcorper.",
-  Coreen:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero nunc consequat interdum varius. Cum sociis natoque penatibus et magnis dis parturient. Quis risus sed vulputate odio ut enim blandit volutpat. At urna condimentum mattis pellentesque id nibh tortor id.",
-};
+
+const projectDescription = "React based video streaming application using the YouTube API to source content. Layout styled using a combination of Flexbox and Grid.";
+
+const teammates = [
+  {
+    name: "Kenia",
+    gitHub: "https://github.com/kenia-r",
+    bio: "Mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque",
+  },
+
+  {
+    name: "Marsha",
+    gitHub: "https://github.com/mphall77",
+    bio: "Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis.",
+  },
+
+  {
+    name: "Coreen",
+    gitHub: "https://github.com/CoreenCooper",
+    bio: "Client-focused software developer who is community-minded and has a passion for developing applications to improve user accessibility.",
+  },
+];
 
 const About = () => {
   return (
     <section id="About">
       <section id="ProductDescription">
         <h2>Project Description</h2>
-        <p>{descriptions.Kenia}</p>
+
+        <p>{projectDescription}</p>
+
       </section>
 
       <div className="break"></div>
 
       <section>
-        <h2 id="teamTitle">Meet the Team</h2>
-        <section id="TeamDescriptions">
-          <section id="leftTeam">
-            <h3>Kenia</h3>
-            <p>{descriptions.Kenia}</p>
-          </section>
 
-          <div className="verticalBreak"></div>
+        <h2 id="teamTitle">Meet the Team 👋🏼 👋🏽 👋🏾</h2>
 
-          <section id="rightTeam">
-            <h3>Marsha</h3>
-            <p>{descriptions.Marsha}</p>
-          </section>
+        <section>
+          <ul className="teammates" id="TeamDescriptions">
+            {teammates.map((teammate) => {
+              return (
+                <>
+                  <li>
+                    <a href={teammate.gitHub} target="_blank">
+                      <h3>{teammate.name}</h3>
+                    </a>
+                    <p>{teammate.bio}</p>
+                  </li>
+                </>
+              );
+            })}
+          </ul>
 
-          <div className="verticalBreak"></div>
-
-          <section id="middleTeam">
-            <h3>Coreen</h3>
-            <p>{descriptions.Coreen}</p>
-          </section>
         </section>
       </section>
     </section>
