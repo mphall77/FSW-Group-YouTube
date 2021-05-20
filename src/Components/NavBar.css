@@ -1,0 +1,6 @@
+.NavBarContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #020001;
+}
