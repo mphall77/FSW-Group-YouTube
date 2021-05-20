@@ -27,12 +27,15 @@ const About = () => {
     <section id="About">
       <section id="ProductDescription">
         <h2>Project Description</h2>
+
         <p>{projectDescription}</p>
+
       </section>
 
       <div className="break"></div>
 
       <section>
+
         <h2 id="teamTitle">Meet the Team 👋🏼 👋🏽 👋🏾</h2>
 
         <section>
@@ -50,6 +53,7 @@ const About = () => {
               );
             })}
           </ul>
+
         </section>
       </section>
     </section>
