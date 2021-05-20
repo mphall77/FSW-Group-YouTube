@@ -42,8 +42,9 @@ const About = () => {
           <ul className="teammates" id="TeamDescriptions">
             {teammates.map((teammate) => {
               return (
+
                   <li key={teammate.name}>
-                    <a href={teammate.gitHub} target="_blank"rel="noreferrer">
+                    <a href={teammate.gitHub} target="_blank"rel="noreferrer">            
                       <h3>{teammate.name}</h3>
                     </a>
                     <p>{teammate.bio}</p>
