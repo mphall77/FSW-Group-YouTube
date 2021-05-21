@@ -1,35 +1,35 @@
 #TeamDescriptions {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 #teamTitle,
 #ProductDescription {
-  padding: 0 3%;
+	padding: 0 3%;
 }
 
 .break {
-  /* background-color: black; */
-  height: 5px;
-  width: 94%;
-  margin: auto;
+	/* background-color: black; */
+	height: 5px;
+	width: 94%;
+	margin: auto;
 }
 
 li {
-  list-style: none;
-  padding: 0 3% 0 0;
-  width: 30vw;
+	list-style: none;
+	padding: 0 3% 0 0;
+	width: 30vw;
 }
 
 a {
-  text-decoration-line: none;
-  color: black;
+	text-decoration-line: none;
+	color: black;
 }
 
 a:visited {
-  color: black;
+	color: rgb(223, 15, 15);
 }
 
 a:hover {
-  color: orange;
+	color: orange;
 }
