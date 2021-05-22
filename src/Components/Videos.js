@@ -36,16 +36,15 @@ const Videos = () => {
             onChange={handleInput}
             type="text"
             placeholder="Search"
-            value={input}
-          ></input>
+            value={input}/>
           <button type="submit">Search</button>
         </form>
       </div>
       <ul>
         {videos.map((video) => {
 		  return (
-           <Link to={`/videos/${video.id.videoId}`}>
-           <li key={video.id.videoId}>
+           <Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
+           <li>
               <img src={video.snippet.thumbnails.medium.url} alt="video" />
               <h4>{video.snippet.title}</h4>
             </li>
