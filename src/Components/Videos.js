@@ -1,82 +1,57 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const Videos = () => {
-	// declare useState
-	const [videos, setVideos] = useState([]);
+  // declare useState
+  const [videos, setVideos] = useState([]);
+  const [input, setInput] = useState("");
 
-	// function to call API
-	const fetchVideos = async () => {
-		try {
-			const res = await axios.get(
-				// `https://youtube.googleapis.com/youtube/v3/videos?&maxResults=8key=${process.env.REACT_APP_API_KEY}`
-				// `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%20contentDetails&chart=mostPopular&maxResults=8&key=${process.env.REACT_APP_API_KEY}`
-				`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=8&key=${process.env.REACT_APP_API_KEY}`
-			);
-			setVideos(res.data.items);
-			debugger;
-		} catch (err) {
-			alert("Something went wrong. Please try again.");
-			setVideos([]);
-		}
-	};
+  const handleInput = (e) => setInput(e.target.value);
+  
+  const handleSubmit = (e) => {
+	  e.preventDefault();
+	  setInput(e.target.value);
+	  fetchVideos(input);
+	  setInput("");	
+  }
+  // function to call API
+  const fetchVideos = async (input) => {
+    try {
+      const res = await axios.get(
+		`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&type=video&videoEmbeddable=true&key=${process.env.REACT_APP_API_KEY}`
 
-	// call the API function --> add input to update screen onChange
-	useEffect(() => {
-		fetchVideos();
-	}, []);
+      );
+      setVideos(res.data.items);
+    } catch (err) {
+      setVideos([]);
+    }
+  };
 
-	return (
-		<section>
-			<ul className="VideoList">
-				{videos.map((video) => {
-					return (
-						<div className="Item">
-							<li key={video.id} className="VideoLi">
-								<iframe
-									src={`https://www.youtube.com/embed/${video.id}`}
-									frameBorder="0"
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-									allowFullScreen
-									title="embedded video"
-								/>
-							</li>
-							<div className="Title">
-								<h4>{video.snippet.title}</h4>
-							</div>
-						</div>
-					);
-				})}
-			</ul>
-		</section>
-	);
+  return (
+    <section>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input
+            onChange={handleInput}
+            type="text"
+            placeholder="Search"
+            value={input}
+          ></input>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <ul>
+        {videos.map((video) => {
+		  return (
+            <li key={video.id.videoId}>
+              <img src={video.snippet.thumbnails.medium.url} alt="video" />
+              <h4>{video.snippet.title}</h4>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
 };
 
 export default Videos;
-
-// Notes
-// https://console.cloud.google.com/apis/api/youtube.googleapis.com/overview?project=g3-youtube-clone
-// const res = await axios.get(
-//     `https://youtube.googleapis.com/youtube/v3',
-//     params:{part: 'snippet',
-//     maxResults:5,
-//     q:'input',
-//     key:${process.env.REACT_APP_API_KEY}
-// }
-// );
-
-// const selectedVideo = async (e) => {
-// 	// verify e.target.value
-// 	id = e.target.value;
-// 	// <iframe />
-// 	// {video.id.videoId}
-// 	try {
-// 		const res = await axios.get(
-// 			`https://youtube.googleapis.com/youtube/v3/id&key=${process.env.REACT_APP_API_KEY}`
-// 		);
-// 		// debugger;
-// 		setSelectedVideo(res.data);
-// 	} catch (err) {
-// 		setSelectedVideo([]);
-// 	}
-// };
