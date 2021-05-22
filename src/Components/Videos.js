@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
@@ -43,10 +44,12 @@ const Videos = () => {
       <ul>
         {videos.map((video) => {
 		  return (
-            <li key={video.id.videoId}>
+           <Link to={`/videos/${video.id.videoId}`}>
+           <li key={video.id.videoId}>
               <img src={video.snippet.thumbnails.medium.url} alt="video" />
               <h4>{video.snippet.title}</h4>
             </li>
+           </Link>
           );
         })}
       </ul>
