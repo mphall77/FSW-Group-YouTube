@@ -11,7 +11,7 @@ const NavBar = () => {
 					alt="youtube logo"
 				/>
 			</NavLink>
-			<NavLink to={"about"}>About</NavLink>
+			<NavLink to={"/about"}>About</NavLink>
 		</nav>
 	);
 };
