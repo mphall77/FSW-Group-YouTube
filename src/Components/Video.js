@@ -1,11 +1,12 @@
-const Video = ({input}) => {
+import { useParams } from "react-router-dom";
+const Video = () => {
+ const { id } = useParams();
 
   return (
     
     <section>
-      <h1>Video Page</h1>
       <iframe
-        src={`https://www.youtube.com/embed/${input}`}
+        src={`https://www.youtube.com/embed/${id}`}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
