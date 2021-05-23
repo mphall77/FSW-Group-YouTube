@@ -47,7 +47,14 @@ const Videos = () => {
           return (
             <Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
               <li className="single-video">
-                <img src={video.snippet.thumbnails.medium.url} alt="video" />
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="embedded video"
+                  alt="video"
+                />
                 <h4>{video.snippet.title}</h4>
               </li>
             </Link>

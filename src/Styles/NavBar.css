@@ -1,7 +1,35 @@
-.NavBarContainer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #020001;
-    height: 60px;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.navbar-container {
+	background-color: #020001;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	grid-row: 1/2;
+	grid-column: 1/13;
+    height: 15vh;
+	width: 100vw;
+}
+
+.navbar-container a {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.logo {
+    height: 45px;
+} 
+
+.logo:hover {
+    transform: scale(1);
+    border-bottom: 5px solid white;
 }

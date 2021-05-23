@@ -1,34 +1,52 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 .videos-container {
-    position: absolute;
     width: 100vw;
     height: 100vh;
 }
 
 .search-bar {
-    position: relative;
-    left: 300px;
+    background-color: #020001;
+    height: 40px;
 }
 
 .search-bar input {
-    height: 25px;
+    height: 30px;
     width: 400px;
     border-radius: 4px;
+    /* margin-bottom: 10px; */
+    padding-left: 5px;
+    
 }
 
 .search-bar button {
-    height: 25px;
+    height: 30px;
     width: 80px;
     border-radius: 4px;
 }
 
+.search-bar button:hover {
+    background-color: #EB3223;
+    color: white;
+    font-weight: bold;
+
+}
+
 .video-list {
-    background-color: aqua;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(auto, 1fr);
-    gap: 10px;
-    margin-top: 80px;
+    gap: 50px;
+    margin: 50px 80px;
     width: 100vw;
+}
+
+.video-list a {
+    width: 100%;
 }
 
 .single-video {
