@@ -1,4 +1,4 @@
-import "./About.css";
+import "../Styles/About.css";
 
 const projectDescription = "React based video streaming application using the YouTube API to source content. Layout styled using a combination of Flexbox and Grid.";
 

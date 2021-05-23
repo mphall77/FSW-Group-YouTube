@@ -17,7 +17,7 @@
 	padding: 10px;
 }
 
-/* .VideoList {
+.VideoList {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -26,17 +26,17 @@
 	overflow-x: auto;
 	overflow-y: hidden;
 	white-space: nowrap;
-} */
+}
 
-/* .VideoLi {
+.VideoLi {
 	display: inline;
 	list-style-type: none;
 	margin-right: 15px;
 	cursor: pointer;
 	background-color: rgb(240, 60, 60);
-} */
+}
 
-/* .VideoLi h4 {
+.VideoLi h4 {
 	display: inline-block;
 }
 
@@ -49,4 +49,4 @@
 .Title {
 	background-color: chartreuse;
 	height: 100px;
-} */
+}

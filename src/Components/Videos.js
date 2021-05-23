@@ -8,19 +8,18 @@ const Videos = () => {
   const [input, setInput] = useState("");
 
   const handleInput = (e) => setInput(e.target.value);
-  
+
   const handleSubmit = (e) => {
-	  e.preventDefault();
-	  setInput(e.target.value);
-	  fetchVideos(input);
-	  setInput("");	
-  }
+    e.preventDefault();
+    setInput(e.target.value);
+    fetchVideos(input);
+    setInput("");
+  };
   // function to call API
   const fetchVideos = async (input) => {
     try {
       const res = await axios.get(
-		`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&type=video&videoEmbeddable=true&key=${process.env.REACT_APP_API_KEY}`
-
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&type=video&videoEmbeddable=true&key=${process.env.REACT_APP_API_KEY}`
       );
       setVideos(res.data.items);
     } catch (err) {
@@ -36,19 +35,20 @@ const Videos = () => {
             onChange={handleInput}
             type="text"
             placeholder="Search"
-            value={input}/>
+            value={input}
+          />
           <button type="submit">Search</button>
         </form>
       </div>
       <ul>
         {videos.map((video) => {
-		  return (
-           <Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
-           <li>
-              <img src={video.snippet.thumbnails.medium.url} alt="video" />
-              <h4>{video.snippet.title}</h4>
-            </li>
-           </Link>
+          return (
+            <Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
+              <li>
+                <img src={video.snippet.thumbnails.medium.url} alt="video" />
+                <h4>{video.snippet.title}</h4>
+              </li>
+            </Link>
           );
         })}
       </ul>
