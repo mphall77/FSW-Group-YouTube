@@ -4,10 +4,6 @@
 	box-sizing: border-box;
 }
 
-body {
-	overflow-x: hidden;
-}
-
 .App {
 	background-color: #181818;
 	text-align: center;
@@ -18,18 +14,18 @@ body {
 	height: 100vh;
 }
 
-.video-container, .about-container {
-    grid-row: 2/13;
-    grid-column: 1/13;
+.video-container,
+.about-container {
+	grid-row: 2/13;
+	grid-column: 1/13;
 }
 
 .home-container {
-    grid-row: 2/13;
-    grid-column: 1/13;
+	grid-row: 2/13;
+	grid-column: 1/13;
 	width: 100vw;
-    height: 100vh;
+	height: 100vh;
 }
-
 
 /* .VideoList {
 	display: flex;
