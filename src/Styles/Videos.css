@@ -1,0 +1,40 @@
+.videos-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.search-bar {
+    position: relative;
+    left: 300px;
+}
+
+.search-bar input {
+    height: 25px;
+    width: 400px;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    height: 25px;
+    width: 80px;
+    border-radius: 4px;
+}
+
+.video-list {
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 10px;
+    margin-top: 80px;
+    width: 100vw;
+}
+
+.single-video {
+    width: 320px;
+}
+
+.single-video li h4 {
+    width: 100%;
+}

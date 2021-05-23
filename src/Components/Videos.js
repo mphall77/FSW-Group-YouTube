@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import "../App.css";
+import "../Styles/Videos.css";
 
 const Videos = () => {
   // declare useState
@@ -19,7 +21,7 @@ const Videos = () => {
   const fetchVideos = async (input) => {
     try {
       const res = await axios.get(
-        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&type=video&videoEmbeddable=true&key=${process.env.REACT_APP_API_KEY}`
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&maxResults=24&type=video&videoEmbeddable=true&key=${process.env.REACT_APP_API_KEY}`
       );
       setVideos(res.data.items);
     } catch (err) {
@@ -28,8 +30,8 @@ const Videos = () => {
   };
 
   return (
-    <section>
-      <div>
+    <section className="videos-container">
+      <div className="search-bar">
         <form onSubmit={handleSubmit}>
           <input
             onChange={handleInput}
@@ -40,11 +42,11 @@ const Videos = () => {
           <button type="submit">Search</button>
         </form>
       </div>
-      <ul>
+      <ul className="video-list">
         {videos.map((video) => {
           return (
             <Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
-              <li>
+              <li className="single-video">
                 <img src={video.snippet.thumbnails.medium.url} alt="video" />
                 <h4>{video.snippet.title}</h4>
               </li>

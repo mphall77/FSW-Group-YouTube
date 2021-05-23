@@ -24,7 +24,7 @@ const teammates = [
 
 const About = () => {
   return (
-    <section id="About">
+    <section className="about-container">
       <section id="ProductDescription">
         <h2>Project Description</h2>
 

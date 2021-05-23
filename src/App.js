@@ -7,8 +7,7 @@ import Video from "./Components/Video";
 
 function App() {
 	return (
-		<div className="App">
-			<main>
+		<main className="App">
 				<NavBar />
 				<Switch>
 					<Route exact path="/" component={Home} />
@@ -17,8 +16,7 @@ function App() {
 						<Video />
 					</Route>
 				</Switch>
-			</main>
-		</div>
+		</main>
 	);
 }
 
