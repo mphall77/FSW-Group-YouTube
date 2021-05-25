@@ -41,6 +41,13 @@
 	width: 200px;
 	margin-bottom: 20px;
 }
+.bio {
+	text-align: left;
+}
+
+.icon {
+	color: red;
+}
 
 .break {
 	/* background-color: black; */
@@ -58,6 +65,7 @@ li {
 a {
 	text-decoration-line: none;
 	color: white;
+	cursor: pointer;
 }
 
 a:visited {
