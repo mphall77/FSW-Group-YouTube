@@ -21,7 +21,7 @@ const Videos = () => {
   const fetchVideos = async (input) => {
     try {
       const res = await axios.get(
-        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&maxResults=24&type=video&videoEmbeddable=true&key=${process.env.REACT_APP_API_KEY}`
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&maxResults=2&type=video&videoEmbeddable=true&key=${process.env.REACT_APP_API_KEY}`
       );
       setVideos(res.data.items);
     } catch (err) {

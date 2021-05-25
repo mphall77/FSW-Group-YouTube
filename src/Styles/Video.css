@@ -1,5 +1,11 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+.back-button {
+	border: none;
+	background-color: black;
+	color: white;
+	font-size: 48px;
+	transform: scale(1);
+}
+.back-button:hover {
+	
+	transform: scale(1);
 }
