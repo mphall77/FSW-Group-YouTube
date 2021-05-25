@@ -8,13 +8,13 @@ const Videos = () => {
 	// declare useState
 	const [videos, setVideos] = useState([]);
 	const [input, setInput] = useState("");
-	const [hasSearched, setHasSearched] = useState(false);
+	// const [hasSearched, setHasSearched] = useState(false);
 
 	const handleInput = (e) => setInput(e.target.value);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setHasSearched(true);
+		// setHasSearched(true);
 		setInput(e.target.value);
 		fetchVideos(input);
 		setInput("");
@@ -33,37 +33,37 @@ const Videos = () => {
 		}
 	};
 
-	let videoList;
-	if (hasSearched) {
-		if (videos.snippet) {
-			// debugger
-			videoList = (
-				<ul className="video-list">
-					{videos.map((video) => {
-						return (
-							<Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
-								<li className="single-video">
-									<iframe
-										src={`https://www.youtube.com/embed/${video.id.videoId}`}
-										frameBorder="0"
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-										allowFullScreen
-										title="embedded video"
-										alt="video"
-									/>
-									<h4>{video.snippet.title}</h4>
-								</li>
-							</Link>
-						);
-					})}
-				</ul>
-			);
-		} else {
-			videoList = <div className="no-video">Video not found</div>;
-		}
-	} else {
-		videoList = null;
-	}
+	// let videoList;
+	// if (hasSearched) {
+	// 	if (videos.snippet) {
+	// 		// debugger
+	// 		videoList = (
+	// 			<ul className="video-list">
+	// 				{videos.map((video) => {
+	// 					return (
+	// 						<Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
+	// 							<li className="single-video">
+	// 								<iframe
+	// 									src={`https://www.youtube.com/embed/${video.id.videoId}`}
+	// 									frameBorder="0"
+	// 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+	// 									allowFullScreen
+	// 									title="embedded video"
+	// 									alt="video"
+	// 								/>
+	// 								<h4>{video.snippet.title}</h4>
+	// 							</li>
+	// 						</Link>
+	// 					);
+	// 				})}
+	// 			</ul>
+	// 		);
+	// 	} else {
+	// 		videoList = <div className="no-video">Video not found</div>;
+	// 	}
+	// } else {
+	// 	videoList = null;
+	// }
 
 	return (
 		<section className="videos-container">
@@ -78,26 +78,26 @@ const Videos = () => {
 					<button type="submit">Search</button>
 				</form>
 			</div>
-			{videoList}
-			{/* <ul className="video-list">
-        {videos.map((video) => {
-          return (
-            <Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
-              <li className="single-video">
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  title="embedded video"
-                  alt="video"
-                />
-                <h4>{video.snippet.title}</h4>
-              </li>
-            </Link>
-          );
-        })}
-      </ul> */}
+			{/* {videoList} */}
+			<ul className="video-list">
+				{videos.map((video) => {
+					return (
+						<Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
+							<li className="single-video">
+								<iframe
+									src={`https://www.youtube.com/embed/${video.id.videoId}`}
+									frameBorder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowFullScreen
+									title="embedded video"
+									alt="video"
+								/>
+								<h4>{video.snippet.title}</h4>
+							</li>
+						</Link>
+					);
+				})}
+			</ul>
 		</section>
 	);
 };

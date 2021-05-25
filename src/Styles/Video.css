@@ -3,3 +3,13 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+.comments {
+	color: white;
+}
+
+.video-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
