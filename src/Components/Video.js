@@ -1,10 +1,16 @@
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 const Video = () => {
   const { id } = useParams();
+  const history = useHistory();
+
+  const goBack = () => {
+    history.goBack();
+  };
 
   return (
     <section className="video-container">
+      <button onClick={goBack}>Go Back</button>
       <iframe
         className="single-video"
         src={`https://www.youtube.com/embed/${id}`}

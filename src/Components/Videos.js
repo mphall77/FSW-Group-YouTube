@@ -8,11 +8,13 @@ const Videos = () => {
   // declare useState
   const [videos, setVideos] = useState([]);
   const [input, setInput] = useState("");
+  const [hasSearched, setHasSearched] = useState(false);
 
   const handleInput = (e) => setInput(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setHasSearched(true);
     setInput(e.target.value);
     fetchVideos(input);
     setInput("");
@@ -21,13 +23,47 @@ const Videos = () => {
   const fetchVideos = async (input) => {
     try {
       const res = await axios.get(
-        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&maxResults=24&type=video&videoEmbeddable=true&key=${process.env.REACT_APP_API_KEY}`
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&maxResults=12&type=video&videoEmbeddable=true&key=${process.env.REACT_APP_API_KEY}`
       );
       setVideos(res.data.items);
+      debugger;
     } catch (err) {
+      console.log("error in fetch");
       setVideos([]);
     }
   };
+
+  let videoList;
+  if (hasSearched) {
+    if (videos.snippet) {
+      // debugger
+      videoList = (
+        <ul className="video-list">
+          {videos.map((video) => {
+            return (
+              <Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
+                <li className="single-video">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title="embedded video"
+                    alt="video"
+                  />
+                  <h4>{video.snippet.title}</h4>
+                </li>
+              </Link>
+            );
+          })}
+        </ul>
+      );
+    } else {
+      videoList = <div>Video not found</div>;
+    }
+  } else {
+    videoList = null;
+  }
 
   return (
     <section className="videos-container">
@@ -36,13 +72,14 @@ const Videos = () => {
           <input
             onChange={handleInput}
             type="text"
-            placeholder="Search"
+            placeholder="Search..."
             value={input}
           />
           <button type="submit">Search</button>
         </form>
       </div>
-      <ul className="video-list">
+      {videoList}
+      {/* <ul className="video-list">
         {videos.map((video) => {
           return (
             <Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
@@ -60,7 +97,7 @@ const Videos = () => {
             </Link>
           );
         })}
-      </ul>
+      </ul> */}
     </section>
   );
 };
