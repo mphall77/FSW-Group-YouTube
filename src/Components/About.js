@@ -4,7 +4,7 @@ import Coreen from "../Images/CoreenC.png";
 import Marsha from "../Images/MarshaH.jpg";
 
 const projectDescription =
-	"React based video streaming application using the YouTube API to source content. Layout styled using a combination of Flexbox and Grid.";
+	"As a team we have created a video streaming application using the YouTube API to source content. For optimization we have used React Hooks as well as a few other React features to implement cleaner code. The layout is styled using a combination of Flexbox and Grid.";
 
 const teammates = [
 	{
@@ -17,7 +17,7 @@ const teammates = [
 	{
 		name: "Marsha",
 		gitHub: "https://github.com/mphall77",
-		bio: "Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis.",
+		bio: "A Full Stack Web Developer coming home to the world of Code. Pursuit has given me the opportunity to follow the path not taken.My goal is to redesign the future of cities and buildings through code creating a better world for future generations to thrive and prosper.",
 		image: Marsha,
 	},
 
@@ -53,8 +53,7 @@ const About = () => {
 									<a href={teammate.gitHub} target="_blank" rel="noreferrer">
 										<h3 className="teammate-name">{teammate.name}</h3>
 									</a>
-
-									<p>{teammate.bio}</p>
+									<p className="bio">{teammate.bio}</p>
 								</li>
 							);
 						})}
