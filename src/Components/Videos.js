@@ -5,81 +5,81 @@ import "../App.css";
 import "../Styles/Videos.css";
 
 const Videos = () => {
-  // declare useState
-  const [videos, setVideos] = useState([]);
-  const [input, setInput] = useState("");
-  const [hasSearched, setHasSearched] = useState(false);
+	// declare useState
+	const [videos, setVideos] = useState([]);
+	const [input, setInput] = useState("");
+	const [hasSearched, setHasSearched] = useState(false);
 
-  const handleInput = (e) => setInput(e.target.value);
+	const handleInput = (e) => setInput(e.target.value);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setHasSearched(true);
-    setInput(e.target.value);
-    fetchVideos(input);
-    setInput("");
-  };
-  // function to call API
-  const fetchVideos = async (input) => {
-    try {
-      const res = await axios.get(
-        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&maxResults=12&type=video&videoEmbeddable=true&key=${process.env.REACT_APP_API_KEY}`
-      );
-      setVideos(res.data.items);
-      debugger;
-    } catch (err) {
-      console.log("error in fetch");
-      setVideos([]);
-    }
-  };
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setHasSearched(true);
+		setInput(e.target.value);
+		fetchVideos(input);
+		setInput("");
+	};
+	// function to call API
+	const fetchVideos = async (input) => {
+		try {
+			const res = await axios.get(
+				`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&maxResults=12&type=video&videoEmbeddable=true&key=${process.env.REACT_APP_API_KEY}`
+			);
+			setVideos(res.data.items);
+			debugger;
+		} catch (err) {
+			console.log("error in fetch");
+			setVideos([]);
+		}
+	};
 
-  let videoList;
-  if (hasSearched) {
-    if (videos.snippet) {
-      // debugger
-      videoList = (
-        <ul className="video-list">
-          {videos.map((video) => {
-            return (
-              <Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
-                <li className="single-video">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    title="embedded video"
-                    alt="video"
-                  />
-                  <h4>{video.snippet.title}</h4>
-                </li>
-              </Link>
-            );
-          })}
-        </ul>
-      );
-    } else {
-      videoList = <div>Video not found</div>;
-    }
-  } else {
-    videoList = null;
-  }
+	let videoList;
+	if (hasSearched) {
+		if (videos.snippet) {
+			// debugger
+			videoList = (
+				<ul className="video-list">
+					{videos.map((video) => {
+						return (
+							<Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
+								<li className="single-video">
+									<iframe
+										src={`https://www.youtube.com/embed/${video.id.videoId}`}
+										frameBorder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowFullScreen
+										title="embedded video"
+										alt="video"
+									/>
+									<h4>{video.snippet.title}</h4>
+								</li>
+							</Link>
+						);
+					})}
+				</ul>
+			);
+		} else {
+			videoList = <div className="no-video">Video not found</div>;
+		}
+	} else {
+		videoList = null;
+	}
 
-  return (
-    <section className="videos-container">
-      <div className="search-bar">
-        <form onSubmit={handleSubmit}>
-          <input
-            onChange={handleInput}
-            type="text"
-            placeholder="Search..."
-            value={input}
-          />
-          <button type="submit">Search</button>
-        </form>
-      </div>
-      {videoList}
-      {/* <ul className="video-list">
+	return (
+		<section className="videos-container">
+			<div className="search-bar">
+				<form onSubmit={handleSubmit}>
+					<input
+						onChange={handleInput}
+						type="text"
+						placeholder="Search..."
+						value={input}
+					/>
+					<button type="submit">Search</button>
+				</form>
+			</div>
+			{videoList}
+			{/* <ul className="video-list">
         {videos.map((video) => {
           return (
             <Link to={`/videos/${video.id.videoId}`} key={video.id.videoId}>
@@ -98,8 +98,8 @@ const Videos = () => {
           );
         })}
       </ul> */}
-    </section>
-  );
+		</section>
+	);
 };
 
 export default Videos;

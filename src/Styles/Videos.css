@@ -54,3 +54,11 @@
 .single-video li h4 {
 	width: 100%;
 }
+
+.no-video {
+	margin-top: 30px;
+	padding-top: 10px;
+	background-color: white;
+	height: 40px;
+	border-bottom: 1px solid red;
+}
