@@ -1,5 +1,6 @@
 import { useParams, useHistory } from "react-router-dom";
 import Comments from "./Comments";
+
 import "../Styles/Video.css";
 
 const Video = () => {
@@ -17,17 +18,17 @@ const Video = () => {
 					Go Back
 				</button>
 			</div>
-			<div>
-				<iframe
-					className="single-video"
-					src={`https://www.youtube.com/embed/${id}`}
-					frameBorder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowFullScreen
-					title="embedded video"
-				/>
-				<Comments />
-			</div>
+
+			<iframe
+				className="single-video"
+				src={`https://www.youtube.com/embed/${id}`}
+				frameBorder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowFullScreen
+				title="embedded video"
+			/>
+
+			<Comments />
 		</section>
 	);
 };

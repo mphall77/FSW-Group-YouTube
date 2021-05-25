@@ -3,13 +3,30 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-.comments {
-	color: white;
-}
 
 .video-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+}
+
+.video-container iframe {
+	width: 400px;
+	height: 400px;
+}
+
+.back-btn,
+.submit-btn {
+	height: 30px;
+	width: 80px;
+	border-radius: 4px;
+	margin-bottom: 10px;
+}
+
+.back-btn:hover,
+.submit-btn:hover {
+	background-color: #eb3223;
+	color: white;
+	font-weight: bold;
 }

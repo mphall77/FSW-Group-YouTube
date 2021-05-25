@@ -26,37 +26,3 @@
 	width: 100vw;
 	height: 100vh;
 }
-
-/* .VideoList {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 20px;
-	margin-left: 25px;
-	overflow-x: auto;
-	overflow-y: hidden;
-	white-space: nowrap;
-}
-
-.VideoLi {
-	display: inline;
-	list-style-type: none;
-	margin-right: 15px;
-	cursor: pointer;
-	background-color: rgb(240, 60, 60);
-}
-
-.VideoLi h4 {
-	display: inline-block;
-}
-
-.Item {
-	display: inline-flex;
-	flex-direction: column;
-	height: 250px;
-}
-
-.Title {
-	background-color: chartreuse;
-	height: 100px;
-} */

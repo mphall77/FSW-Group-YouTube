@@ -1,0 +1,31 @@
+.user-comments {
+	border-top: 3px solid red;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.user-comments form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: white;
+	margin: 10px 0;
+}
+
+.user-comments ul {
+	margin-left: 20px;
+	min-height: 185px;
+}
+
+.user-comments input,
+textarea {
+	padding-left: 5px;
+	margin-bottom: 10px;
+}
+.user-comments input {
+	width: 215px;
+}
