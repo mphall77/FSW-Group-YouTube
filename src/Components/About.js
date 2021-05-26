@@ -10,7 +10,7 @@ const teammates = [
 	{
 		name: "Kenia",
 		gitHub: "https://github.com/kenia-r",
-		bio: "Mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque",
+		bio: "My passion lies in building community and being part of helping to provide a safe space for individuals to experience joy, and to share and bond over common interests.",
 		image: Kenia,
 	},
 
