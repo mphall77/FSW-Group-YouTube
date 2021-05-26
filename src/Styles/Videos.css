@@ -14,7 +14,7 @@
 	height: 40px;
 }
 
-.search-bar input {
+.search-input {
 	height: 30px;
 	width: 400px;
 	border-radius: 4px;
@@ -60,4 +60,13 @@
 	background-color: white;
 	height: 40px;
 	border-bottom: 1px solid red;
+}
+
+.max-input {
+	margin: 0 10px;
+	padding: 5px;
+	height: 30px;
+	width: 50px;
+	border-radius: 4px;
+	margin-bottom: 10px;
 }
