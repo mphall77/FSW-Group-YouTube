@@ -6,18 +6,23 @@ import { Route, Switch } from "react-router-dom";
 import Video from "./Components/Video";
 
 function App() {
-	return (
-		<main className="App">
-				<NavBar />
-				<Switch>
-					<Route exact path="/" component={Home} />
-					<Route path="/about" component={About} />
-					<Route path="/videos/:id">
-						<Video />
-					</Route>
-				</Switch>
-		</main>
-	);
+  //declare state for videos to access history in video.js
+  //declare input
+
+  return (
+    <main className="App">
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/about" component={About} />
+        <Route path="/videos/:id">
+          <Video />
+        </Route>
+      </Switch>
+    </main>
+  );
 }
 
 export default App;

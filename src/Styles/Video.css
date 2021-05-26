@@ -12,8 +12,9 @@
 }
 
 .video-container iframe {
-	width: 400px;
-	height: 400px;
+	margin-top: 20px;
+	width: 640px;
+	height: 360px;
 }
 
 .back-btn,
