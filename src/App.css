@@ -1,28 +1,29 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .App {
-	background-color: #181818;
-	text-align: center;
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: repeat(12, 1fr);
-	width: 100vw;
-	height: 100vh;
+  background-color: #181818;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  width: 100vw;
+  height: 100vh;
 }
 
 .video-container,
 .about-container {
-	grid-row: 2/13;
-	grid-column: 1/13;
+  grid-row: 2/13;
+  grid-column: 1/13;
 }
 
 .home-container {
-	grid-row: 2/13;
-	grid-column: 1/13;
-	width: 100vw;
-	height: 100vh;
+  grid-row: 2/13;
+  grid-column: 1/13;
+  width: 100vw;
+  height: 100vh;
 }
+
