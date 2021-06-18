@@ -18,6 +18,15 @@ const API = apiURL();
 function App() {
 	const [transactions, setTransactions] = useState([]);
 
+	const addNewTransaction = async (newTransaction) => {
+		try {
+			const res = await axios.post(`${API}/transactions`, newTransaction);
+			setTransactions([...transactions, res.data]);
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
 	const fetchTransactions = async () => {
 		try {
 			// this is the line that connects to the server the backend
