@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./script.js" defer></script>
+		<link rel="stylesheet" href="./style.css" />
+		<title>Animate Card</title>
+	</head>
+	<body>
+		<!-- nav bar -->
+		<header>
+			<nav>
+				<div id="header-info" class="flex">
+					<img
+						class="thumbnail shadow"
+						id="profile-pic"
+						src="./images/Pursuit-Marsha.jpg"
+						alt="Marsha"
+					/>
+					<div id="name-title">
+						<h2>Marsha Hall</h2>
+						<h4>Full Stack Web Developer</h4>
+						<h4>Pursuit Fellow</h4>
+					</div>
+				</div>
+				<ul>
+					<li><a data-page="home" href="#">Home</a></li>
+					<li><a data-page="about" href="#">About</a></li>
+					<li><a data-page="projects" href="#">Projects</a></li>
+					<li><a data-page="contact" href="#">Contact</a></li>
+					<div class="bubble"></div>
+				</ul>
+				
+			</nav>
+		</header>
+
+		<!-- main -->
+		<main>
+			<section data-index="0" class="home">
+				<h4>Home</h4>
+			</section>
+			<!-- end s0 -->
+
+			<section data-index="1" class="about">
+				<!-- A B O U T -->
+
+				<div class="main-container">
+					<div class="about-wrapper">
+						<div class="about-me fade-in appear">
+							<!-- left -- More about me -->
+							<h4>More About Me</h4>
+							<p>
+								Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+								Corrupti reprehenderit suscipit numquam quis expedita fuga
+								voluptatum consequuntur? Dignissimos, quaerat modi.
+							</p>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+								hic atque iusto natus quisquam, suscipit alias commodi sit magni
+								vel?
+							</p>
+						</div>
+
+						<!-- right -- SKILLS -->
+						<div class="skill-links fade-in appear">
+							<h4>Expertice</h4>
+							<p>
+								<a href="./resume.pdf" target="_blank">Download Resume</a>
+							</p>
+							<div id="skills" class="shadow">
+								<div id="corner-tl" class="corner"></div>
+								<div id="corner-tr" class="corner"></div>
+								<ul>
+									<li>HTML/CSS</li>
+									<li>JavaScript</li>
+									<li>React</li>
+								</ul>
+								<ul>
+									<li>APIs</li>
+									<li>Heroku</li>
+									<li>Postgres</li>
+								</ul>
+								<div id="corner-bl" class="corner"></div>
+								<div id="corner-br" class="corner"></div>
+							</div>
+							<!-- end skills -->
+						</div>
+						<!-- end right -->
+					</div>
+					<!-- end about wrapper -->
+				</div>
+				<!-- end main-container -->
+			</section>
+			<!-- end s1 -->
+			<section data-index="2" class="projects">
+				<h4>Projects</h4>
+
+				<!-- START my magical project card -->
+				<div class="container">
+					<div class="card">
+						<div class="project">
+							<div class="circle"></div>
+							<img
+								src="./images/faris-mohammed-WoN_WzB5LNE-unsplash.jpg"
+								alt="testing"
+								class="thumbnail"
+							/>
+						</div>
+
+						<div class="info">
+							<h4 class="title">Project 1</h4>
+							<p class="description">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+								blanditiis!
+							</p>
+							<!-- <div class="sizes">
+						<button>1</button>
+						<button class="active">2</button>
+						<button>3</button>
+					</div> -->
+						</div>
+					</div>
+				</div>
+
+				<!-- card 2 -->
+				<div class="container">
+					<div class="card">
+						<div class="project">
+							<div class="circle"></div>
+							<img
+								src="./images/faris-mohammed-WoN_WzB5LNE-unsplash.jpg"
+								alt="testing"
+								class="thumbnail"
+							/>
+						</div>
+
+						<div class="info">
+							<h4 class="title">Project 2</h4>
+							<p class="description">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+								blanditiis!
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- card 3 -->
+				<div class="container">
+					<div class="card">
+						<div class="project">
+							<div class="circle"></div>
+							<img
+								src="./images/faris-mohammed-WoN_WzB5LNE-unsplash.jpg"
+								alt="testing"
+								class="thumbnail"
+							/>
+						</div>
+
+						<div class="info">
+							<h4 class="title">Project 3</h4>
+							<p class="description">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+								blanditiis!
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- END my magical project card -->
+			</section>
+			<!-- end s2 -->
+			<section data-index="3" class="contact">
+				<!-- C O N T A C T -->
+
+				<div class="main-container">
+					<h3>Get in Touch</h3>
+
+					<form id="contact-form">
+						<label>Name</label>
+						<input type="text" name="name" class="input-field" />
+
+						<label>Subject</label>
+						<input type="text" name="subject" class="input-field" />
+
+						<label>Email</label>
+						<input type="email" name="email" class="input-field" />
+
+						<label>Message</label>
+						<textarea name="message" class="input-field"> </textarea>
+
+						<input id="submit-btn" type="submit" value="send" />
+					</form>
+				</div>
+			</section>
+			<!-- end S3 -->
+		</main>
+	</body>
+</html>

@@ -1,0 +1,534 @@
+/* create a variable to change colors 
+ * allows you to use a color repeatedly throughout the website
+ */
+:root {
+	--mainColor: #787999;
+	--secondaryColor: silver;
+
+	--subtleAccent: #e5e5e7;
+	--boldAccent: #882ad4;
+	--darkAccent: #1f095a;
+
+	--linkColor: #73869b;
+
+	--borderColor: #c1c1c1;
+}
+
+/* remove all default styles */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+/* Nav Bar & HEADER styling */
+header {
+	position: sticky;
+	top: 0;
+	background-color: var(--subtleAccent);
+	padding-left: 20px;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+	/* above everything else on the site */
+	z-index: 999;
+	width: 100%;
+	margin: auto;
+	/* default is 16px so # X 16   */
+	font-size: .9rem;
+}
+
+#my-info {
+	display: flex;
+	align-items: center;
+}
+
+/* images */
+#profile-pic {
+	width: 100px;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.thumbnail {
+	width: 250px;
+	border-radius: 10px;
+}
+
+.shadow {
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+h1,
+h5,
+ #name-title{
+	color: #73869b;
+}
+
+#name-title h3 {
+	/* font-size: 30px; */
+	font-weight: bold;
+	background: linear-gradient(45deg, var(--boldAccent), var(--darkAccent), var(--boldAccent));
+	background-clip: text;
+	color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;	
+}
+
+/* NAV BAR */
+nav {
+	min-height: 10vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	z-index: 1;
+	/* responsive -- no bigger than 1300px*/
+	max-width: 1300px;
+}
+
+nav h1 {
+	margin-bottom: 7px;
+}
+
+.nav-links {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	list-style: none;
+	align-items: center;
+	flex: 1;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: #73869b;
+	font-size: 1.5em;
+	/* transition: all 0.5s ease; */
+}
+
+/* hover effects */
+h2:hover,
+.nav-links a:hover {
+	font-weight: bold;
+	color: var(--boldAccent);
+	border-bottom: 3px solid var(--boldAccent);
+	transition: all 0.5s ease;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0px;
+	background-color: #89909f;
+}
+
+/* displays one section on the page at a time */
+section {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ***---->  A B O U T   <---*** */
+#about {
+	display: grid;
+	/* responsive at 320px: stack to 1 column */
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 10px;
+
+	align-items: center;
+	color: var(--subtleAccent);
+}
+
+/* left */
+.about-me {
+	margin-left: 50px;
+	border: 1px solid var(--subtleAccent);
+	padding: 50px;
+}
+
+.about-me h2 {
+	display: inline-block;
+	margin-bottom: 40px;
+	color: rgb(31, 9, 90);
+}
+
+p {
+	line-height: 1.6em;
+	font-size: 24px;
+}
+
+/* right */
+#about-h2r {
+	margin-right: 20px;
+	display: inline-block;
+}
+
+/* ***---->  P R O J E C T S   <---*** */
+/* **********_____________***********__________************** */
+/* DEV ED -- flip card -- https://www.youtube.com/watch?v=y_6fVz9jPWA */
+.container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-container {
+	width: 300px;
+	height: 300px;
+}
+
+.card {
+	width: 100%;
+	height: 100%;
+	transition: transform 1s ease-in-out;
+	/* not working */
+	transform-style: preserve-3d;
+	/* -webkit-transform-style: preserve-3d; */
+}
+
+/* to keep that crazy shake from happening -- not working now*/
+.card-container:hover .card {
+	transform: rotateY(180deg);
+}
+
+.card figure {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	/* stack the front and back */
+	position: absolute;
+	flex-direction: column;
+	text-align: center;
+}
+
+.card .front,
+.card .front2,
+.card .front3 {
+	background: #b6d1db;
+	transform: rotateY(180deg);
+}
+
+.card .back,
+.card .back2,
+.card .back3 {
+	background: rgb(114, 155, 189);
+	/* why is crazy shake happening when I add this? 
+	also won't show the other side of the card anymore*/
+	/* transform: rotateY(180deg); */
+}
+
+/* **********____END_________***********____PROJECTS______************** */
+
+/* ***---->  E X P E R I E N C E   <---*** */
+#experience {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	/* display: grid;
+	grid-template-columns: 1fr 1fr minmax(); */
+}
+
+#resume-link {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+
+#resume-link a {
+	text-decoration: none;
+	font-size: 30px;
+	border: 1px solid purple;
+	background-color: var(--subtleAccent);
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+#resume-link:hover {
+	transform: scale(1.1);
+	border-bottom: 2px solid purple;
+}
+
+.skills-card {
+	/* change so that it adapts to the content */
+	min-width: 400px;
+
+	display: flex;
+	justify-content: space-around;
+	padding: 20px 50px;
+	border: 1.5px solid rgb(60, 60, 90);
+	border-radius: 15px;
+	/* to set the dots in the corners and not the page  -- to PARENT */
+	position: relative;
+	background-color: #948ecc;
+}
+
+/* right */
+#skill-links {
+	/* change so that it adapts to the content */
+	font-size: 24px;
+}
+
+#skill-links a {
+	color: silver;
+	text-decoration: none;
+}
+
+/* dots at the corners */
+.corner,
+.corner-proj {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1.5px solid rgb(60, 60, 90);
+	background-color: #fff;
+	/* to set the dots in the preview corners and not the page  CHILD*/
+	position: absolute;
+}
+
+#corner-tl,
+#corner-tl-proj {
+	top: 10px;
+	left: 10px;
+}
+
+#corner-tr,
+#corner-tr-proj {
+	top: 10px;
+	right: 10px;
+}
+
+#corner-bl,
+#corner-bl-proj {
+	bottom: 10px;
+	left: 10px;
+}
+#corner-br,
+#corner-br-proj {
+	bottom: 10px;
+	right: 10px;
+}
+
+/* ************************************** */
+
+#projects {
+	background-color: #3e688b;
+}
+
+#about,
+#experience,
+#education {
+	background-color: #787999;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+
+/* style projects section  */
+/* #projects {
+	display: flex;
+} */
+
+/* #projects h1 {
+	color: #a9bcd0;
+	margin-top: 30px;
+} */
+
+/* div.card {
+	width: 250px; */
+/* box-shadow: 10px 10px 5px rgb(96, 93, 117); */
+/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0, 6px 20px 0 rgba(0, 0, 0, 0.19); */
+/* text-align: center;
+	margin: 10px;
+} */
+
+/* div.image {
+	height: 150px;
+	font-size: 40px;
+	padding: 10px;
+	background-color: rgb(148, 144, 172);
+} */
+
+/* div.para {
+	padding: 10px;
+	background-color: white;
+} */
+
+/* ****************************** */
+/* **********_____________***********__________************** */
+/* DEV ED -- contact form animation -- https://www.youtube.com/watch?v=wc5k2AMPED0 */
+#main-container {
+	height: 100vh;
+	transition: background 0.5s ease;
+	/* to stack the fields PARENT*/
+	position: relative;
+}
+
+#contact h1 {
+	color: var(--darkAccent);
+	/* !!! fix the position to above the form inputs */
+	position: absolute;
+	left: 20%;
+}
+
+.name-field,
+.subject-field,
+.email-field,
+.message-field,
+.finish {
+	/* stack CHILD */
+	position: absolute;
+	transform: translate(-50%, -50%);
+	border: 1px solid var(--borderColor);
+	background-color: white;
+	height: 80px;
+	width: 400px;
+	border-radius: 7px;
+	transition: all 0.5s ease;
+	display: flex;
+	justify-content: space-between;
+	/* not working -- why? */
+	align-items: center;
+}
+
+.name-field i,
+.subject-field i,
+.email-field i,
+.message-field i,
+.finish i {
+	padding: 10px;
+	color: var(--boldAccent);
+}
+
+.name-field input,
+.subject-field input,
+.email-field input,
+.message-field {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 18px;
+	outline-color: var(--borderColor);
+}
+
+div.inactive {
+	opacity: 0;
+	pointer-events: none;
+	/* have to fix so it stays on this part of the form */
+	transform: translate(-50%, 50%);
+}
+
+div.active {
+	opacity: 1;
+	pointer-events: all;
+	transform: translate(-50%, -50%);
+}
+
+/* **********____END_________***********____CONTACT FORM______************** */
+/* style footer  */
+/* form  */
+/* #contact h1 {
+	color: var(--darkAccent);
+	position: absolute;
+	left: 30%;
+} */
+
+/* #contact-form {
+	display: block; */
+/* responsive @ 600px */
+/* max-width: 600px; */
+/* center the form  -- not working with 0 auto */
+/* margin: 0 auto;
+	border: 1px solid var(--borderColor);
+	padding: 15px;
+	border-radius: 15px;
+	background-color: #787999;
+	margin: 20px 0;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+} */
+
+/* .input-field {
+	width: 100%;
+	padding: 10px 0;
+	background-color: var(--secondaryColor);
+	border-radius: 7px;
+	border: 1px solid var(--borderColor);
+	font-size: 14px;
+} */
+
+/* #contact-form label {
+	line-height: 2.7em;
+} */
+
+/* #contact-form textarea {
+	min-height: 40px;
+	font-size: 14px;
+} */
+
+/* #submit-btn {
+	margin-top: 10px;
+	width: 100%;
+	padding: 10px 0;
+	color: #fff;
+	background-color: var(--darkAccent);
+	border: none;
+}  */
+
+/* make responsive */
+/* @media screen and (max-width: 960px) { */
+/* navbar container */
+/* nav {
+		display: flex;
+		justify-content: space-between;
+		height: 80px;
+		z-index: 1;
+		width: 100%;
+		max-width: 1300px;
+		padding: 0;
+	} */
+/* nav menu */
+/* .nav-links {
+		display: grid;
+		grid-template-columns: auto;
+		margin: 0;
+		width: 100%;
+		take it odd the screen
+		position: absolute;
+		top: -1000px;
+		opacity: 1;
+		z-index: -1;
+		transition: all 0.5s ease;
+	}
+
+.nav-links.active {
+	top: 100%;
+	opacity: 1;
+		z-index: 99;
+		
+font-size: 1.2rem;
+height: 60vh;
+}
+
+.burger {
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	transition: all 0.5s ease-in-out;
+	background: purple;
+}
+
+
+
+} */
+
+.home-i {
+	font-size: 70px;
+	color: lawngreen;
+	margin: 20px;
+}

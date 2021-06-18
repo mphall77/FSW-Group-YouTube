@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Marsha P. Hall</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<script src="./script.js" defer></script>
+	</head>
+	<body>
+		<!-- H E A D E R and N A V - B A R-->
+		<!-- HEADER -->
+		<section class="s1">
+			<header class="main-container">
+				<!-- name -->
+				<div class="greeting-wrapper">
+					<h1>Marsha</h1>
+				</div>
+
+				<!-- NAV BAR -->
+				<div class="intro-wrapper">
+					<!-- nav bar -->
+					<nav class="nav-wrapper">
+						<div class="dots-wrapper">
+							<div class="browser-dot" id="dot-1"></div>
+							<div class="browser-dot" id="dot-2"></div>
+							<div class="browser-dot" id="dot-3"></div>
+						</div>
+						<ul id="navigation">
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+					<!-- left -->
+					<div class="left-column">
+						<img
+							class="shadow"
+							id="profile-pic"
+							src="./images/Pursuit-Marsha.jpg"
+							alt="Marsha"
+						/>
+						<h5>Personalize Theme</h5>
+
+						<!-- dots to change theme color -->
+						<div id="theme-wrapper">
+							<div id="light-mode" class="theme-dot"></div>
+							<div id="blue-mode" class="theme-dot"></div>
+							<div id="purple-mode" class="theme-dot"></div>
+						</div>
+
+						<p id="settings-note">Themes will be saved for your next visit</p>
+					</div>
+					<!-- right -->
+					<div class="right-column">
+						<div id="preview" class="shadow">
+							<div id="corner-tl" class="corner"></div>
+							<div id="corner-tr" class="corner"></div>
+
+							<h3>What I do.</h3>
+							<p>
+								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est,
+								obcaecati unde perferendis ipsum doloremque ab eveniet
+								architecto itaque pariatur distinctio.
+							</p>
+							<div id="corner-bl" class="corner"></div>
+							<div id="corner-br" class="corner"></div>
+						</div>
+					</div>
+				</div>
+			</header>
+		</section>
+
+		<!-- A B O U T -->
+		<section class="s2">
+			<div class="main-container">
+				<div class="about-wrapper">
+					<div class="about-me">
+						<!-- left -- More about me -->
+						<h4>More About Me</h4>
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+							reprehenderit suscipit numquam quis expedita fuga voluptatum
+							consequuntur? Dignissimos, quaerat modi.
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam hic
+							atque iusto natus quisquam, suscipit alias commodi sit magni vel?
+						</p>
+					</div>
+
+					<!-- right -- SKILLS -->
+					<div class="skill-links">
+						<h4>Top Expertice</h4>
+						<p>
+							FSW Developer
+							<a href="./resume.pdf" target_blank>Download Resume</a>
+						</p>
+						<div id="skills" class="shadow">
+							<div id="corner-tl" class="corner"></div>
+							<div id="corner-tr" class="corner"></div>
+							<ul>
+								<li>HTML/CSS</li>
+								<li>JavaScript</li>
+								<li>React</li>
+							</ul>
+							<ul>
+								<li>APIs</li>
+								<li>Heroku</li>
+								<li>Postgres</li>
+							</ul>
+							<div id="corner-bl" class="corner"></div>
+							<div id="corner-br" class="corner"></div>
+						</div>
+						<!-- end skills -->
+					</div>
+					<!-- end right -->
+				</div>
+				<!-- end about wrapper -->
+			</div>
+			<!-- end main-container -->
+		</section>
+
+		<section class="s1">
+			<div class="main-container">
+				<h3>Projects</h3>
+				<div class="portfolio-wrapper">
+					
+					<div>
+						<div class="project shadow">
+							<img
+								src="./images/Pursuit-Marsha.jpg"
+								alt="project 1"
+								class="thumbnail"
+							/>
+							<div class="project-preview">
+								<h4 class="project-title">Project 1</h4>
+								<p class="project-text">
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Repellendus, sint.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="project shadow">
+							<img
+								src="./images/Pursuit-Marsha.jpg"
+								alt="project 2"
+								class="thumbnail"
+							/>
+							<div class="project-preview">
+								<h4 class="project-title">Project 2</h4>
+								<p class="project-text">
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Repellendus, sint.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="project shadow">
+							<img
+								src="./images/Pursuit-Marsha.jpg"
+								alt="project 3"
+								class="thumbnail"
+							/>
+							<div class="project-preview">
+								<h4 class="project-title">Project 3</h4>
+								<p class="project-text">
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Repellendus, sint.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- C O N T A C T -->
+		<section class="s2">
+			<div class="main-container">
+				<h3>Get in Touch</h3>
+
+				<form id="contact-form">
+					<label>Name</label>
+					<input type="text" name="name" class="input-field" />
+
+					<label>Subject</label>
+					<input type="text" name="subject" class="input-field" />
+
+					<label>Email</label>
+					<input type="email" name="email" class="input-field" />
+
+					<label>Message</label>
+					<textarea name="message" class="input-field"> </textarea>
+
+					<input id="submit-btn" type="submit" value="send" />
+				</form>
+			</div>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,355 @@
+/* create a variable to change colors 
+ * allows you to use a color repeatedly throughout the website
+ */
+:root {
+	--mainColor: rgb(148, 146, 146);
+	--secondaryColor: silver;
+
+	--borderColor: #c1c1c1;
+
+	--mainText: black;
+	--secondaryText: #4b5156;
+
+	--theme-border: #24292e;
+
+	--previewBg: silver;
+
+	--buttonColor: black;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+header {
+	position: sticky;
+	top: 0px;
+	background-color: #e5e5e7;
+	padding-left: 50px;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+	/* z-index: 99; */
+}
+
+/* delete this */
+#header-info {
+	display: flex;
+	/* justify-content: space-between; */
+	align-items: center;
+}
+
+.thumbnail {
+	width: 100px;
+	z-index: 3;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.shadow {
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+/* NAV BAR */
+nav {
+	min-height: 10vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: auto;
+}
+
+nav h2 {
+	margin-bottom: 7px;
+}
+nav h2,
+nav ul {
+	font-size: 1.5rem;
+	flex: 1;
+}
+
+nav ul {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0 150px;
+}
+
+nav a {
+	color: black;
+	text-decoration: none;
+}
+
+nav a:hover {
+	font-weight: bold;
+	border-bottom: 2px solid #7e74db;
+}
+
+body {
+	min-height: 90vh;
+	/* display: flex;
+    align-items: center;
+    justify-content: center; */
+	perspective: 1000px;
+}
+
+/* displays one section on the page at a time */
+section {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* space holder -- delete */
+section h4 {
+	font-size: 3rem;
+	color: white;
+}
+
+.home {
+	background: linear-gradient(to right top, #e2df0f, #9c641a);
+	/* background: linear-gradient(to right top, #c25f44, #eea849); */
+}
+
+.about {
+	background: linear-gradient(to right top, #023d63, #191a47);
+	/* background: linear-gradient(to right top, #005c97, #363795); */
+}
+
+.projects {
+	background: linear-gradient(to right top, #771917, #b1120f);
+	/* background: linear-gradient(to right top, #eb504e, #802321); */
+}
+
+.contact {
+	background: linear-gradient(to right top, #5b7a1b, #196e19);
+	/* background: linear-gradient(to right top, #9acd32, #196e19); */
+}
+
+.bubble {
+	/* put it behind the text */
+	z-index: -2;
+	position: absolute;
+	background: linear-gradient(to right top, #44a6e4, #8485ca);
+	transition: all 0.5s ease;
+	transform: scale(2);
+}
+
+/* !!! --  NOT WORKING  */
+.fade-in {
+	opacity: 0;
+	transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear {
+	opacity: 1;
+}
+
+.from-left {
+	grid-column: 1/2;
+	transform: translateX(-50%);
+}
+
+.from-right {
+	grid-column: 2/3;
+	transform: translateX(50%);
+}
+
+.from-left,
+.from-right {
+	transition: transform 400ms ease-in;
+}
+
+.from-left.appear,
+.from-right.appear {
+	transform: translateX(0);
+}
+
+/* ABOUT section  */
+/* left */
+.about-wrapper {
+	display: grid;
+	/* responsive at 320px: stack to 1 column */
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 10px;
+	padding: 50px 0;
+	align-items: center;
+}
+
+#skills {
+	width: 330px;
+	display: flex;
+	justify-content: space-evenly;
+	background-color: var(--previewBg);
+	padding: 50px 0;
+	border: 1.5px solid rgb(60, 60, 90);
+	border-radius: 15px;
+	/* to set the dots in the preview corners and not the page  PARENT*/
+	position: relative;
+}
+
+/* right */
+.skill-links {
+	display: grid;
+	align-content: center;
+	justify-content: center;
+}
+
+.skill-links a {
+	color: silver;
+	text-decoration: none;
+}
+
+/* dots at the corners */
+.corner {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	border: 1.5px solid rgb(60, 60, 90);
+	background-color: #fff;
+	/* to set the dots in the preview corners and not the page  CHILD*/
+	position: absolute;
+}
+
+#corner-tl {
+	top: 4px;
+	left: 4px;
+}
+#corner-tr {
+	top: 4px;
+	right: 4px;
+}
+
+#corner-bl {
+	bottom: 4px;
+	left: 4px;
+}
+#corner-br {
+	bottom: 4px;
+	right: 4px;
+}
+
+/* PROJECT */
+
+.container {
+	width: 50%;
+	display: flex;
+	/* display: grid; */
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	/* max-width: 600px; */
+}
+
+.card {
+	transform-style: preserve-3d;
+	min-height: 50vh;
+	width: 15rem;
+	box-shadow: 0 20px 20px rgba(0, 0, 0, 0.75), 0 0 50px rgba(0, 0, 0, 0.2);
+	padding: 10px 20px;
+	border-radius: 30px;
+}
+
+.project {
+	min-height: 35vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+.circle {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background: linear-gradient(
+		to right,
+		rgb(154, 205, 50, 0.75),
+		rgb(255, 69, 0, 0.75)
+	);
+	position: absolute;
+	z-index: 1;
+	transition: all 0.75s ease-out;
+}
+
+.info h4 {
+	transition: all 0.75s ease-out;
+}
+.info p {
+	padding: 10px 20px;
+	transition: all 0.75s ease-out;
+}
+
+.sizes {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 10px 0;
+	transition: all 0.75s ease-out;
+}
+
+.sizes button {
+	padding: 5px 20px;
+	background: none;
+	border: none;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	border-radius: 30px;
+	color: grey;
+	cursor: pointer;
+}
+
+button.active {
+	background: grey;
+	color: rgb(255, 255, 255);
+}
+
+/* form  */
+#contact-form {
+	display: block;
+	/* responsive @ 600px */
+	max-width: 600px;
+	/* center the form  -- not working with 0 auto */
+	margin: 0 auto;
+	border: 1px solid var(--borderColor);
+	padding: 15px;
+	border-radius: 15px;
+	background-color: var(--mainColor);
+	margin: 50px 0;
+}
+
+.input-field {
+	width: 100%;
+	padding: 10px 0;
+	background-color: var(--secondaryColor);
+	border-radius: 7px;
+	border: 1px solid var(--borderColor);
+	font-size: 14px;
+}
+
+#contact-form label {
+	line-height: 2.7em;
+}
+
+#contact-form textarea {
+	min-height: 40px;
+	font-size: 14px;
+}
+
+#submit-btn {
+	margin-top: 10px;
+	width: 100%;
+	padding: 10px 0;
+	color: #fff;
+	background-color: var(--buttonColor);
+	border: none;
+}
+
+/* end DEV ED */
+/* x (l to r), y (t to b), blur, color & opacity */
