@@ -1,0 +1,119 @@
+.App {
+	text-align: center;
+}
+
+/* Global */
+a {
+	text-decoration: none;
+}
+
+/* NAVBAR */
+nav {
+	background-color: #04aa6d;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 15vh;
+	text-transform: uppercase;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+	font-size: 1rem;
+}
+
+nav a:hover {
+	border-bottom: 2px solid black;
+	color: white;
+}
+
+/* I N D E X -- Table */
+table {
+	width: 50%;
+	margin: auto;
+	border: 1px solid #000000;
+}
+
+td {
+	text-align: center;
+}
+
+tbody td:not(td:first-of-type):hover {
+	transform: scale(1.05);
+	opacity: 0.9;
+}
+
+tbody tr:nth-child(even) {
+	background: #04aa6d;
+	height: 30px;
+}
+
+thead {
+	background-color: grey;
+	color: #fff;
+	font-size: 1rem;
+}
+
+/* N E W -from */
+.New {
+	border: 1px solid #000;
+	margin: 10px;
+	width: 100%;
+}
+
+.New form {
+	margin: 10px;
+	width: 95%;
+}
+
+form label {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	font-weight: bold;
+	margin: 20px;
+}
+
+input[type] {
+	display: block;
+	width: 90%;
+	margin: 10px;
+	padding: 10px;
+	background: #f1f1f1;
+	border: 1px solid grey;
+}
+
+.submit-btn {
+	background-color: #04aa6d;
+	color: white;
+	/* padding: 16px 20px; */
+	/* margin: 8px 0; */
+	border: none;
+	cursor: pointer;
+	width: 30%;
+	height: 40px;
+	opacity: 0.9;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.trns-btns {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+button {
+	background-color: #04aa6d;
+	border-radius: 5px;
+	border: none;
+	height: 30px;
+	padding: 5px 15px;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+button:hover {
+	color: #fff;
+	cursor: pointer;
+}
