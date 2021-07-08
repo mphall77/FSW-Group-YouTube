@@ -42,8 +42,30 @@
 	width: 100vw;
 }
 
+/* for small screens */
+@media (max-width: 40em) {
+	.video-list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+/* for iPad screens */
+@media (width: 768px) {
+	.video-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(auto, 1fr);
+		gap: 20px;
+		margin-top: 50px;
+		width: 100vw;
+	}
+}
+
 .video-list a {
-	width: 100%;
+	width: 90%;
 }
 
 .single-video {
