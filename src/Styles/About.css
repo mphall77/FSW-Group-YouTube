@@ -23,6 +23,7 @@
 #ProjectDescription {
 	margin: 30px 0;
 }
+
 #ProjectDescription p {
 	margin: 20px 0 30px 0;
 }
@@ -30,17 +31,20 @@
 .teammate-name {
 	margin: 20px 0;
 }
+
 .teammates {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
 .profile {
 	border-radius: 50%;
 	height: 200px;
 	width: 200px;
 	margin-bottom: 20px;
 }
+
 .bio {
 	text-align: left;
 }
@@ -74,4 +78,10 @@ a:visited {
 
 a:hover {
 	color: red;
+}
+
+.gitLogo {
+	margin: 20px 0;
+	border: 1px solid red;
+	border-radius: 50%;
 }
